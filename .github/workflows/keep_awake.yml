@@ -1,0 +1,15 @@
+name: Ping Streamlit App
+
+on:
+  schedule:
+    # Runs every 10 hours
+    - cron: '0 */10 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping app to keep it awake
+        run: curl --silent "https://shellfishmealswap-ndptdtp8zkycycbjs7f7p6.streamlit.app/"
+
